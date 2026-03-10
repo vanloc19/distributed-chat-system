@@ -3,8 +3,6 @@
 .idea/
 .cursorignore/
 
-# Backend (managed as submodule separately)
-backend/
 
 # OS
 .DS_Store
