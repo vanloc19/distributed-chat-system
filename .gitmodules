@@ -1,3 +1,6 @@
 [submodule "backend"]
 	path = backend
 	url = git@github.com:vanloc19/backend-chat-app.git
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:vanloc19/frontend-chat-app.git
