@@ -11,29 +11,27 @@ The project is split into two submodules:
 
 ```mermaid
 flowchart LR
-  subgraph Client
-    Web[Web App\n(React)]
-    Desktop[Desktop Launcher\n(Electron + Web)]
-  end
+  Web["Web App (React)"]
+  Desktop["Desktop Launcher (Electron)"]
 
-  GW[API Gateway\nGo :5000]
+  GW["API Gateway (Go :5000)"]
 
-  Auth[Auth Service\nSpring Boot + Mongo]
-  Friend[Friend Service\nNestJS + Mongo]
-  Msg[Messager Service\nGo + WS + Postgres]
-  Notif[Notification Service\nNestJS + Mongo]
+  Auth["Auth Service (Spring Boot + Mongo)"]
+  Friend["Friend Service (NestJS + Mongo)"]
+  Msg["Messager Service (Go + WS + Postgres)"]
+  Notif["Notification Service (NestJS + Mongo)"]
 
-  MongoAuth[(MongoDB: auth)]
-  MongoFriend[(MongoDB: friend)]
-  MongoNotif[(MongoDB: notification)]
-  PgMsg[(Postgres: messages)]
+  MongoAuth[(MongoDB auth)]
+  MongoFriend[(MongoDB friend)]
+  MongoNotif[(MongoDB notification)]
+  PgMsg[(Postgres messages)]
 
-  Web -->|HTTPS / WebSocket| GW
-  Desktop -->|HTTPS / WebSocket| GW
+  Web -->|HTTPS / WS| GW
+  Desktop -->|HTTPS / WS| GW
 
   GW -->|/auth/*| Auth
   GW -->|/friends/*| Friend
-  GW -->|/messager/* (WS)| Msg
+  GW -->|/messager/*| Msg
   GW -->|/notifications/*| Notif
 
   Auth --> MongoAuth
