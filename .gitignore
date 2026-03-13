@@ -3,9 +3,15 @@
 .idea/
 .cursorignore/
 
+
 # OS
 .DS_Store
 Thumbs.db
 
 # Environment variables — NEVER commit real credentials
 **/.env
+note.md
+**/note.md
+.note.md
+**/.note.md
+**/*.note.md
